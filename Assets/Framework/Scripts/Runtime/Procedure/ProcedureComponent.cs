@@ -105,6 +105,8 @@ namespace UnityGameFramework.Runtime
                 Log.Error("Hotfix params error!");
                 return;
             }
+            string _value = _newProcedures[0].ToString();
+            Type _t= _newProcedures[0].GetType(); 
             StartCoroutine(UpdateProcedure(_newProceduresTypes,_newProcedures, _nextProcedure));
         }
 

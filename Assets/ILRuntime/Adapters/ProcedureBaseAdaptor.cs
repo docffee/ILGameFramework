@@ -205,6 +205,25 @@ public class ProcedureBaseAdaptor : CrossBindingAdaptor
             else
                 base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
         }
-        
+
+
+        public override string ToString()
+        {
+            IMethod m = appdomain.ObjectType.GetMethod("ToString", 0);
+            m = instance.Type.GetVirtualMethod(m);
+            return instance.Type.FullName+"-----xxxxx";
+            if (m == null || m is ILMethod)
+            {
+                return instance.ToString();
+            }
+            else
+                return instance.Type.FullName;
+        }
+
+        public new Type GetType()
+        {
+            return instance.Type.ReflectionType;
+        }
+
     }
 }
