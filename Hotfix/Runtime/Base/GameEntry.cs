@@ -13,9 +13,9 @@ namespace Hotfix
     public static class GameEntry
     {
         private const string UnityGameFrameworkVersion = "3.0.6";
-        private static readonly Dictionary<int, GameFrameworkComponent> _allGFComponents =
-            new Dictionary<int, GameFrameworkComponent>();
-
+        private static readonly Dictionary<string, GameFrameworkComponent> _allGFComponents =
+            new Dictionary<string, GameFrameworkComponent>();
+        
         /// <summary>
         /// 游戏框架所在的场景编号。
         /// </summary>
@@ -49,9 +49,9 @@ namespace Hotfix
         /// <returns>要获取的游戏框架组件。</returns>
         public static GameFrameworkComponent GetComponent(Type type)
         {
-            int hashCode = type.GetHashCode();
-            if (_allGFComponents.ContainsKey(hashCode))
-                return _allGFComponents[hashCode];
+            string fullName = type.FullName;
+            if (_allGFComponents.ContainsKey(fullName))
+                return _allGFComponents[fullName];
             return null;
         }
 
@@ -60,10 +60,14 @@ namespace Hotfix
         /// </summary>
         /// <param name="typeName">要获取的游戏框架组件类型名称。</param>
         /// <returns>要获取的游戏框架组件。</returns>
-        public static GameFrameworkComponent GetComponent(int typeHashCode)
+        public static GameFrameworkComponent GetComponent(string typeName)
         {
-            if (_allGFComponents.ContainsKey(typeHashCode))
-                return _allGFComponents[typeHashCode];
+            string fullName = typeName;
+            //Type type = _assembly.GetType(typeName);
+            //if (type != null)
+            //    fullName = type.FullName;
+            if (_allGFComponents.ContainsKey(fullName))
+                return _allGFComponents[fullName];
             return null;
         }
         
@@ -108,25 +112,30 @@ namespace Hotfix
         /// <summary>
         /// 注册游戏框架组件。
         /// </summary>
-        internal static void RegisterComponent()
+        public static void RegisterComponent(List<Type> listTypes)
         {
-            Assembly assembly = typeof(GameEntry).Assembly;
-            Type[] types = assembly.GetTypes();
-            foreach (var item in types)
+            foreach (var item in listTypes)
             {
-                GFComponentAttribute gFComponentAttribute = item.GetCustomAttribute<GFComponentAttribute>();
-                if (gFComponentAttribute == null|| item.IsAbstract)
+                if (item.IsAbstract)
                     continue;
+                object[] objs = item.GetCustomAttributes(typeof(GfComponentAttribute),false);
+                if (objs.Length == 0)
+                    continue;
+                
                 object obj = Activator.CreateInstance(item);
                 if (!(obj is GameFrameworkComponent gfComponent))
-                    Log.Error("Game Framework component is invalid." + item);
+                    Debug.Log("Game Framework component is invalid." + item);
                 else
                 {
-                    int hashCode = item.GetHashCode();
-                    if (!_allGFComponents.ContainsKey(hashCode))
-                        _allGFComponents.Add(hashCode, gfComponent);
+                    string fullName = item.FullName;
+                    if (!string.IsNullOrEmpty(fullName) && !_allGFComponents.ContainsKey(fullName))
+                        _allGFComponents.Add(fullName, gfComponent);
+                    else
+                        Debug.Log("添加失败,已有类型：" + item.FullName);
                 }
+             
             }
+            Debug.Log("GFComponent count:" + _allGFComponents.Count);
         }
     }
 }

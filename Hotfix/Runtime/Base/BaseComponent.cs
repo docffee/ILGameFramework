@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace Hotfix
 {
+    [GfComponent]
     public class BaseComponent:GameFrameworkComponent
     {
         private const int DefaultDpi = 96;  // default windows dpi
@@ -194,7 +195,7 @@ namespace Hotfix
         public BaseComponent()
         {
             InitLogHelper();
-            Log.Info("Game Framework version is {0}. Unity Game Framework version is {1}.", GameFrameworkEntry.Version, GameEntry.Version);
+       //     Log.Info("Game Framework version is {0}. Unity Game Framework version is {1}.", GameFrameworkEntry.Version, GameEntry.Version);
             
             InitZipHelper();
             InitJsonHelper();
@@ -205,7 +206,7 @@ namespace Hotfix
             {
                 Utility.Converter.ScreenDpi = DefaultDpi;
             }
-
+            
             m_EditorResourceMode &= Application.isEditor;
             if (m_EditorResourceMode)
             {
@@ -216,7 +217,8 @@ namespace Hotfix
             Time.timeScale = m_GameSpeed;
             Application.runInBackground = m_RunInBackground;
             Screen.sleepTimeout = m_NeverSleep ? SleepTimeout.NeverSleep : SleepTimeout.SystemSetting;
-            Application.lowMemory += OnLowMemory;
+            //暂时注释
+          //  Application.lowMemory += OnLowMemory;
         }
 
         //***** 由游戏内调用Update
@@ -270,7 +272,7 @@ namespace Hotfix
         internal void Shutdown()
         {
             Application.lowMemory -= OnLowMemory;
-            Dispose();
+           // Dispose();
         }
 
         private void InitLogHelper()
