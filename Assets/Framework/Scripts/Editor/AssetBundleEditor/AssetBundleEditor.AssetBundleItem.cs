@@ -23,12 +23,12 @@ namespace UnityGameFramework.Editor.AssetBundleTools
             {
                 if (assetBundle == null)
                 {
-                    throw new GameFrameworkException("AssetBundle is invalid.");
+                    throw new System.Exception("AssetBundle is invalid.");
                 }
 
                 if (folder == null)
                 {
-                    throw new GameFrameworkException("AssetBundle folder is invalid.");
+                    throw new System.Exception("AssetBundle folder is invalid.");
                 }
 
                 Name = name;

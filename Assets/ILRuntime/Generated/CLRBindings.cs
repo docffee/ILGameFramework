@@ -28,6 +28,8 @@ namespace ILRuntime.Runtime.Generated
             UnityEngine_Time_Binding.Register(app);
             UnityEngine_Debug_Binding.Register(app);
             System_Type_Binding.Register(app);
+            System_Activator_Binding.Register(app);
+            System_Exception_Binding.Register(app);
             System_Collections_Generic_List_1_ILTypeInstance_Binding.Register(app);
         }
     }

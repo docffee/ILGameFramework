@@ -528,30 +528,30 @@
             初始化游戏框架中包含事件数据的类的新实例。
             </summary>
         </member>
-        <member name="T:GameFramework.GameFrameworkException">
+        <member name="T:GameFramework.System.Exception">
             <summary>
             游戏框架异常类。
             </summary>
         </member>
-        <member name="M:GameFramework.GameFrameworkException.#ctor">
+        <member name="M:GameFramework.System.Exception.#ctor">
             <summary>
             初始化游戏框架异常类的新实例。
             </summary>
         </member>
-        <member name="M:GameFramework.GameFrameworkException.#ctor(System.String)">
+        <member name="M:GameFramework.System.Exception.#ctor(System.String)">
             <summary>
             使用指定错误消息初始化游戏框架异常类的新实例。
             </summary>
             <param name="message">描述错误的消息。</param>
         </member>
-        <member name="M:GameFramework.GameFrameworkException.#ctor(System.String,System.Exception)">
+        <member name="M:GameFramework.System.Exception.#ctor(System.String,System.Exception)">
             <summary>
             使用指定错误消息和对作为此异常原因的内部异常的引用来初始化游戏框架异常类的新实例。
             </summary>
             <param name="message">解释异常原因的错误消息。</param>
             <param name="innerException">导致当前异常的异常。如果 innerException 参数不为空引用，则在处理内部异常的 catch 块中引发当前异常。</param>
         </member>
-        <member name="M:GameFramework.GameFrameworkException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+        <member name="M:GameFramework.System.Exception.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
             用序列化数据初始化游戏框架异常类的新实例。
             </summary>

@@ -28,6 +28,8 @@ public class ILRuntimeCLRBinding
         types.Add(typeof(Time));
         types.Add(typeof(Debug));
         types.Add(typeof(System.Type));
+        types.Add(typeof(System.Activator));
+        types.Add(typeof(System.Exception));
         //所有DLL内的类型的真实C#类型都是ILTypeInstance
         types.Add(typeof(List<ILRuntime.Runtime.Intepreter.ILTypeInstance>));
 

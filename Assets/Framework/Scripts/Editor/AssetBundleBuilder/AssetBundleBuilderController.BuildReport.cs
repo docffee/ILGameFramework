@@ -45,7 +45,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
             {
                 if (string.IsNullOrEmpty(buildReportPath))
                 {
-                    throw new GameFrameworkException("Build report path is invalid.");
+                    throw new System.Exception("Build report path is invalid.");
                 }
 
                 m_BuildReportName = Utility.Path.GetCombinePath(buildReportPath, BuildReportName);

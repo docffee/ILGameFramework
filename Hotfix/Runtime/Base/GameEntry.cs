@@ -12,10 +12,19 @@ namespace Hotfix
 {
     public static class GameEntry
     {
-        private const string UnityGameFrameworkVersion = "3.0.6";
+        private const string UnityGameFrameworkVersion = "3.0.7";
         private static readonly Dictionary<string, GameFrameworkComponent> _allGFComponents =
             new Dictionary<string, GameFrameworkComponent>();
-        
+
+        /// <summary>
+        /// 热更新的所有类型
+        /// </summary>
+        public static Type[] HotfixTypes
+        {
+            get;
+            private set;
+        }
+
         /// <summary>
         /// 游戏框架所在的场景编号。
         /// </summary>
@@ -114,6 +123,9 @@ namespace Hotfix
         /// </summary>
         public static void RegisterComponent(List<Type> listTypes)
         {
+            HotfixTypes = listTypes.ToArray();
+            Utility.Assembly.AddTypes(listTypes);
+
             foreach (var item in listTypes)
             {
                 if (item.IsAbstract)

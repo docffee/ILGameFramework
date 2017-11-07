@@ -19,7 +19,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
         {
             if (folder == null)
             {
-                throw new GameFrameworkException("Source asset folder is invalid.");
+                throw new System.Exception("Source asset folder is invalid.");
             }
 
             Guid = guid;

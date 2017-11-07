@@ -570,7 +570,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
 
         public byte[] Decompress(byte[] bytes)
         {
-            throw new GameFrameworkException("Decompress is not implemented.");
+            throw new System.Exception("Decompress is not implemented.");
         }
 
         public string[] GetBuildEventHandlerTypeNames()
@@ -950,7 +950,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                     binaryWriter.Write(m_AssetBundleDatas.Count);
                     if (m_AssetBundleDatas.Count > ushort.MaxValue)
                     {
-                        throw new GameFrameworkException("Package list can only contains 65535 resources in version 0.");
+                        throw new System.Exception("Package list can only contains 65535 resources in version 0.");
                     }
 
                     foreach (AssetBundleData assetBundleData in m_AssetBundleDatas.Values)
@@ -958,7 +958,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                         byte[] nameBytes = GetXorBytes(Utility.Converter.GetBytes(assetBundleData.Name), encryptBytes);
                         if (nameBytes.Length > byte.MaxValue)
                         {
-                            throw new GameFrameworkException(string.Format("AssetBundle name '{0}' is too long.", assetBundleData.Name));
+                            throw new System.Exception(string.Format("AssetBundle name '{0}' is too long.", assetBundleData.Name));
                         }
 
                         binaryWriter.Write((byte)nameBytes.Length);
@@ -973,7 +973,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                             byte[] variantBytes = GetXorBytes(Utility.Converter.GetBytes(assetBundleData.Variant), encryptBytes);
                             if (variantBytes.Length > byte.MaxValue)
                             {
-                                throw new GameFrameworkException(string.Format("AssetBundle variant '{0}' is too long.", assetBundleData.Variant));
+                                throw new System.Exception(string.Format("AssetBundle variant '{0}' is too long.", assetBundleData.Variant));
                             }
 
                             binaryWriter.Write((byte)variantBytes.Length);
@@ -992,7 +992,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                             byte[] assetNameBytes = GetXorBytes(Utility.Converter.GetBytes(assetName), Utility.Converter.GetBytes(assetBundleCode.HashCode));
                             if (assetNameBytes.Length > byte.MaxValue)
                             {
-                                throw new GameFrameworkException(string.Format("Asset name '{0}' is too long.", assetName));
+                                throw new System.Exception(string.Format("Asset name '{0}' is too long.", assetName));
                             }
 
                             binaryWriter.Write((byte)assetNameBytes.Length);
@@ -1006,7 +1006,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                                 byte[] dependencyAssetNameBytes = GetXorBytes(Utility.Converter.GetBytes(dependencyAssetName), Utility.Converter.GetBytes(assetBundleCode.HashCode));
                                 if (dependencyAssetNameBytes.Length > byte.MaxValue)
                                 {
-                                    throw new GameFrameworkException(string.Format("Dependency asset name '{0}' is too long.", dependencyAssetName));
+                                    throw new System.Exception(string.Format("Dependency asset name '{0}' is too long.", dependencyAssetName));
                                 }
 
                                 binaryWriter.Write((byte)dependencyAssetNameBytes.Length);
@@ -1047,7 +1047,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                     binaryWriter.Write(m_AssetBundleDatas.Count);
                     if (m_AssetBundleDatas.Count > ushort.MaxValue)
                     {
-                        throw new GameFrameworkException("Version list can only contains 65535 resources in version 0.");
+                        throw new System.Exception("Version list can only contains 65535 resources in version 0.");
                     }
 
                     foreach (AssetBundleData assetBundleData in m_AssetBundleDatas.Values)
@@ -1055,7 +1055,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                         byte[] nameBytes = GetXorBytes(Utility.Converter.GetBytes(assetBundleData.Name), encryptBytes);
                         if (nameBytes.Length > byte.MaxValue)
                         {
-                            throw new GameFrameworkException(string.Format("AssetBundle name '{0}' is too long.", assetBundleData.Name));
+                            throw new System.Exception(string.Format("AssetBundle name '{0}' is too long.", assetBundleData.Name));
                         }
 
                         binaryWriter.Write((byte)nameBytes.Length);
@@ -1070,7 +1070,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                             byte[] variantBytes = GetXorBytes(Utility.Converter.GetBytes(assetBundleData.Variant), encryptBytes);
                             if (variantBytes.Length > byte.MaxValue)
                             {
-                                throw new GameFrameworkException(string.Format("AssetBundle variant '{0}' is too long.", assetBundleData.Variant));
+                                throw new System.Exception(string.Format("AssetBundle variant '{0}' is too long.", assetBundleData.Variant));
                             }
 
                             binaryWriter.Write((byte)variantBytes.Length);
@@ -1091,7 +1091,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                             byte[] assetNameBytes = GetXorBytes(Utility.Converter.GetBytes(assetName), Utility.Converter.GetBytes(assetBundleCode.HashCode));
                             if (assetNameBytes.Length > byte.MaxValue)
                             {
-                                throw new GameFrameworkException(string.Format("Asset name '{0}' is too long.", assetName));
+                                throw new System.Exception(string.Format("Asset name '{0}' is too long.", assetName));
                             }
 
                             binaryWriter.Write((byte)assetNameBytes.Length);
@@ -1105,7 +1105,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                                 byte[] dependencyAssetNameBytes = GetXorBytes(Utility.Converter.GetBytes(dependencyAssetName), Utility.Converter.GetBytes(assetBundleCode.HashCode));
                                 if (dependencyAssetNameBytes.Length > byte.MaxValue)
                                 {
-                                    throw new GameFrameworkException(string.Format("Dependency asset name '{0}' is too long.", dependencyAssetName));
+                                    throw new System.Exception(string.Format("Dependency asset name '{0}' is too long.", dependencyAssetName));
                                 }
 
                                 binaryWriter.Write((byte)dependencyAssetNameBytes.Length);
@@ -1167,7 +1167,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                         byte[] nameBytes = GetXorBytes(Utility.Converter.GetBytes(assetBundleData.Name), encryptBytes);
                         if (nameBytes.Length > byte.MaxValue)
                         {
-                            throw new GameFrameworkException(string.Format("AssetBundle name '{0}' is too long.", assetBundleData.Name));
+                            throw new System.Exception(string.Format("AssetBundle name '{0}' is too long.", assetBundleData.Name));
                         }
 
                         binaryWriter.Write((byte)nameBytes.Length);
@@ -1182,7 +1182,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                             byte[] variantBytes = GetXorBytes(Utility.Converter.GetBytes(assetBundleData.Variant), encryptBytes);
                             if (variantBytes.Length > byte.MaxValue)
                             {
-                                throw new GameFrameworkException(string.Format("AssetBundle variant '{0}' is too long.", assetBundleData.Variant));
+                                throw new System.Exception(string.Format("AssetBundle variant '{0}' is too long.", assetBundleData.Variant));
                             }
 
                             binaryWriter.Write((byte)variantBytes.Length);
@@ -1398,7 +1398,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
             int codeLength = code.Length;
             if (code == null || codeLength <= 0)
             {
-                throw new GameFrameworkException("Code is invalid.");
+                throw new System.Exception("Code is invalid.");
             }
 
             int codeIndex = 0;

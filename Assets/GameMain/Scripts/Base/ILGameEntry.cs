@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using GameFramework;
+using ILFramework;
 using ILRuntime.CLR.Method;
 using ILRuntime.CLR.TypeSystem;
 using UnityEngine;
@@ -30,9 +31,8 @@ public class ILGameEntry : MonoBehaviour {
     // Use this for initialization
     void Start () {
         AppDomain = new AppDomain();
-
 #if UNITY_EDITOR
-       OnHotFixLoaded(_dllAsset.bytes,null);
+       OnHotFixLoaded(_dllAsset.bytes, _pdbAsset.bytes);
         LoadHotfixEntry();
 #endif
     }

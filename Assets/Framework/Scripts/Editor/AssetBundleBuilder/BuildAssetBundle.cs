@@ -25,7 +25,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
             AssetBundleBuilderController controller = new AssetBundleBuilderController();
             if (!controller.Load())
             {
-                throw new GameFrameworkException("Load configuration failure.");
+                throw new System.Exception("Load configuration failure.");
             }
             else
             {
@@ -34,12 +34,12 @@ namespace UnityGameFramework.Editor.AssetBundleTools
 
             if (!controller.IsValidOutputDirectory)
             {
-                throw new GameFrameworkException(string.Format("Output directory '{0}' is invalid.", controller.OutputDirectory));
+                throw new System.Exception(string.Format("Output directory '{0}' is invalid.", controller.OutputDirectory));
             }
 
             if (!controller.BuildAssetBundles())
             {
-                throw new GameFrameworkException("Build AssetBundles failure.");
+                throw new System.Exception("Build AssetBundles failure.");
             }
             else
             {

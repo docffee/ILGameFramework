@@ -84,7 +84,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
         {
             if (string.IsNullOrEmpty(name))
             {
-                throw new GameFrameworkException("Source folder name is invalid.");
+                throw new System.Exception("Source folder name is invalid.");
             }
 
             foreach (SourceFolder folder in m_Folders)
@@ -102,13 +102,13 @@ namespace UnityGameFramework.Editor.AssetBundleTools
         {
             if (string.IsNullOrEmpty(name))
             {
-                throw new GameFrameworkException("Source folder name is invalid.");
+                throw new System.Exception("Source folder name is invalid.");
             }
 
             SourceFolder folder = GetFolder(name);
             if (folder != null)
             {
-                throw new GameFrameworkException("Source folder is already exist.");
+                throw new System.Exception("Source folder is already exist.");
             }
 
             folder = new SourceFolder(name, this);
@@ -126,7 +126,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
         {
             if (string.IsNullOrEmpty(name))
             {
-                throw new GameFrameworkException("Source asset name is invalid.");
+                throw new System.Exception("Source asset name is invalid.");
             }
 
             foreach (SourceAsset asset in m_Assets)
@@ -144,23 +144,23 @@ namespace UnityGameFramework.Editor.AssetBundleTools
         {
             if (string.IsNullOrEmpty(guid))
             {
-                throw new GameFrameworkException("Source asset guid is invalid.");
+                throw new System.Exception("Source asset guid is invalid.");
             }
 
             if (string.IsNullOrEmpty(path))
             {
-                throw new GameFrameworkException("Source asset path is invalid.");
+                throw new System.Exception("Source asset path is invalid.");
             }
 
             if (string.IsNullOrEmpty(name))
             {
-                throw new GameFrameworkException("Source asset name is invalid.");
+                throw new System.Exception("Source asset name is invalid.");
             }
 
             SourceAsset asset = GetAsset(name);
             if (asset != null)
             {
-                throw new GameFrameworkException(string.Format("Source asset '{0}' is already exist.", name));
+                throw new System.Exception(string.Format("Source asset '{0}' is already exist.", name));
             }
 
             asset = new SourceAsset(guid, path, name, this);

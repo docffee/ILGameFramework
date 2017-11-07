@@ -86,7 +86,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
             {
                 if (string.IsNullOrEmpty(name))
                 {
-                    throw new GameFrameworkException("AssetBundle folder name is invalid.");
+                    throw new System.Exception("AssetBundle folder name is invalid.");
                 }
 
                 foreach (AssetBundleFolder folder in m_Folders)
@@ -104,13 +104,13 @@ namespace UnityGameFramework.Editor.AssetBundleTools
             {
                 if (string.IsNullOrEmpty(name))
                 {
-                    throw new GameFrameworkException("AssetBundle folder name is invalid.");
+                    throw new System.Exception("AssetBundle folder name is invalid.");
                 }
 
                 AssetBundleFolder folder = GetFolder(name);
                 if (folder != null)
                 {
-                    throw new GameFrameworkException("AssetBundle folder is already exist.");
+                    throw new System.Exception("AssetBundle folder is already exist.");
                 }
 
                 folder = new AssetBundleFolder(name, this);
@@ -128,7 +128,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
             {
                 if (string.IsNullOrEmpty(name))
                 {
-                    throw new GameFrameworkException("AssetBundle item name is invalid.");
+                    throw new System.Exception("AssetBundle item name is invalid.");
                 }
 
                 foreach (AssetBundleItem item in m_Items)
@@ -147,7 +147,7 @@ namespace UnityGameFramework.Editor.AssetBundleTools
                 AssetBundleItem item = GetItem(name);
                 if (item != null)
                 {
-                    throw new GameFrameworkException("AssetBundle item is already exist.");
+                    throw new System.Exception("AssetBundle item is already exist.");
                 }
 
                 item = new AssetBundleItem(name, assetBundle, this);

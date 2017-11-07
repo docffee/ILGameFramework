@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILGameFramework", "ILGameFramework.csproj", "{854AE270-CD81-5C8B-ADBC-85DECAE9003D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILGameFramework.Editor", "ILGameFramework.Editor.csproj", "{CECA9B1F-798D-F3E6-0058-CC00603092D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotfix", "Hotfix\Hotfix.csproj", "{83DA6734-4794-470E-AFB6-CC95551479A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{854AE270-CD81-5C8B-ADBC-85DECAE9003D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854AE270-CD81-5C8B-ADBC-85DECAE9003D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854AE270-CD81-5C8B-ADBC-85DECAE9003D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854AE270-CD81-5C8B-ADBC-85DECAE9003D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CECA9B1F-798D-F3E6-0058-CC00603092D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECA9B1F-798D-F3E6-0058-CC00603092D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECA9B1F-798D-F3E6-0058-CC00603092D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECA9B1F-798D-F3E6-0058-CC00603092D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83DA6734-4794-470E-AFB6-CC95551479A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DA6734-4794-470E-AFB6-CC95551479A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DA6734-4794-470E-AFB6-CC95551479A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DA6734-4794-470E-AFB6-CC95551479A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
