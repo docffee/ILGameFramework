@@ -8,7 +8,7 @@
 using GameFramework;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace Hotfix.Runtime
 {
     /// <summary>
     /// 辅助器创建器相关的实用函数。

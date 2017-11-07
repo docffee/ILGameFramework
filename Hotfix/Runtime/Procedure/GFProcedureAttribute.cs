@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Hotfix
+namespace Hotfix.Runtime
 {
     [AttributeUsage( AttributeTargets.Class)]
     public class GfProcedureAttribute:Attribute

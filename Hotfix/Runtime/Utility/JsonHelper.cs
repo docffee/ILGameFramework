@@ -8,7 +8,7 @@
 using GameFramework;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace Hotfix.Runtime
 {
     /// <summary>
     /// JSON 函数集辅助器。

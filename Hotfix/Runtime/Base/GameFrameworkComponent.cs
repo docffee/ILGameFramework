@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Hotfix
+namespace Hotfix.Runtime
 {
     public abstract class GameFrameworkComponent
     {

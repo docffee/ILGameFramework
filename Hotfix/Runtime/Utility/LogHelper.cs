@@ -8,7 +8,7 @@
 using GameFramework;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace Hotfix.Runtime
 {
     /// <summary>
     /// 日志辅助器。

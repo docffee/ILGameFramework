@@ -1,4 +1,4 @@
-﻿namespace Hotfix
+﻿namespace Hotfix.Runtime
 {
     public enum ProcedureType
     {

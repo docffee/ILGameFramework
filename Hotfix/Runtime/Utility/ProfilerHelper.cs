@@ -8,7 +8,7 @@
 using GameFramework;
 using System.Threading;
 
-namespace UnityGameFramework.Runtime
+namespace Hotfix.Runtime
 {
     /// <summary>
     /// 性能分析辅助器。

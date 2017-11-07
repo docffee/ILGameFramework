@@ -5,7 +5,7 @@ using GameFramework.Localization;
 using GameFramework.Resource;
 using UnityEngine;
 
-namespace Hotfix
+namespace Hotfix.Runtime
 {
     [GfComponent]
     public class BaseComponent:GameFrameworkComponent
@@ -283,7 +283,7 @@ namespace Hotfix
             }
 
           //  Type logHelperType = Utility.Assembly.GetTypeWithinLoadedAssemblies(m_LogHelperTypeName);
-            Type logHelperType = typeof(UnityGameFramework.Runtime.LogHelper);
+            Type logHelperType = typeof(Hotfix.Runtime.LogHelper);
             if (logHelperType == null)
             {
                 Debug.Log("logHelperType is null:" );
@@ -296,8 +296,7 @@ namespace Hotfix
             Log.ILogHelper logHelper = (Log.ILogHelper)Activator.CreateInstance(logHelperType);
             if (logHelper == null)
             {
-                Debug.Log("logHelper is null:");
-                // throw new System.Exception(string.Format("Can not create log helper instance '{0}'.", m_LogHelperTypeName));
+                throw new System.Exception(string.Format("Can not create log helper instance '{0}'.", m_LogHelperTypeName));
             }
 
             Log.SetLogHelper(logHelper);
@@ -311,7 +310,7 @@ namespace Hotfix
             }
 
             //  Type zipHelperType = Utility.Assembly.GetTypeWithinLoadedAssemblies(m_ZipHelperTypeName);
-            Type zipHelperType = typeof(UnityGameFramework.Runtime.ZipHelper);
+            Type zipHelperType = typeof(Hotfix.Runtime.ZipHelper);
             if (zipHelperType == null)
             {
                 Log.Error("Can not find Zip helper type '{0}'.", m_ZipHelperTypeName);
@@ -336,7 +335,7 @@ namespace Hotfix
             }
 
             //   Type jsonHelperType = Utility.Assembly.GetTypeWithinLoadedAssemblies(m_JsonHelperTypeName);
-            Type jsonHelperType = typeof(UnityGameFramework.Runtime.JsonHelper);
+            Type jsonHelperType = typeof(Hotfix.Runtime.JsonHelper);
 
             if (jsonHelperType == null)
             {
@@ -378,7 +377,7 @@ namespace Hotfix
             //    return;
             //}
 
-            Utility.Profiler.SetProfilerHelper(new UnityGameFramework.Runtime.ProfilerHelper(Thread.CurrentThread));
+            Utility.Profiler.SetProfilerHelper(new Hotfix.Runtime.ProfilerHelper(Thread.CurrentThread));
         }
 
         private void OnLowMemory()

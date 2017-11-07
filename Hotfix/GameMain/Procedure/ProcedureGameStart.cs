@@ -2,6 +2,7 @@
 using GameFramework.Procedure;
 using UnityEngine;
 using ProcedureOwner= GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
+using Hotfix.Runtime;
 
 namespace Hotfix
 {

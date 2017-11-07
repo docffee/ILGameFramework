@@ -9,7 +9,7 @@ using GameFramework;
 using ICSharpCode.SharpZipLib.GZip;
 using System.IO;
 
-namespace UnityGameFramework.Runtime
+namespace Hotfix.Runtime
 {
     /// <summary>
     /// 压缩解压缩辅助器。

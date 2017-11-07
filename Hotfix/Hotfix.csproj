@@ -308,6 +308,7 @@
     <Compile Include="Runtime\Base\GFComponentAttribute.cs" />
     <Compile Include="Runtime\Base\ShutdownType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\DataNode\DataNodeComponent.cs" />
     <Compile Include="Runtime\Procedure\GFProcedureAttribute.cs" />
     <Compile Include="Runtime\Procedure\ProcedureComponent.cs" />
     <Compile Include="Runtime\Procedure\ProcedureType.cs" />

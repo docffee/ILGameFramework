@@ -53,7 +53,7 @@ public class ILGameEntry : MonoBehaviour {
         List<Type> _listType = new List<Type>();
         foreach (var item in types)
             _listType.Add(item);
-        AppDomain.Invoke("Hotfix.GameEntry", "RegisterComponent", null, _listType);
+        AppDomain.Invoke("Hotfix.Runtime.GameEntry", "RegisterComponent", null, _listType);
     }
 
     #region 加载热更新

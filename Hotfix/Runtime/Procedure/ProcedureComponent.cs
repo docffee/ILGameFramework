@@ -7,7 +7,7 @@ using GameFramework.Fsm;
 using GameFramework.Procedure;
 using UnityEngine;
 
-namespace Hotfix
+namespace Hotfix.Runtime
 {
     [GfComponent]
     public class ProcedureComponent:GameFrameworkComponent

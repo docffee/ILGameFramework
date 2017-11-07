@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
-namespace Hotfix
+namespace Hotfix.Runtime
 {
     public static class GameEntry
     {

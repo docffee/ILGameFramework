@@ -1,4 +1,4 @@
-﻿namespace Hotfix
+﻿namespace Hotfix.Runtime
 {
     /// <summary>
     /// 关闭游戏框架类型。
