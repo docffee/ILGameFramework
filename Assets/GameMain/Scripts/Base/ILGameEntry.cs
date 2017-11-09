@@ -104,8 +104,10 @@ public class ILGameEntry : MonoBehaviour {
     {
         //这里做一些ILRuntime的注册，HelloWorld示例暂时没有需要注册的
         AppDomain.RegisterCrossBindingAdaptor(new ProcedureBaseAdaptor());
-        AppDomain.RegisterCrossBindingAdaptor(new UIFormLogicAdaptor());
+        AppDomain.RegisterCrossBindingAdaptor(new IDisposableAdaptor());
         AppDomain.RegisterCrossBindingAdaptor(new IDataRowAdaptor());
+        AppDomain.RegisterCrossBindingAdaptor(new MonoBehaviourAdapter());
+        AppDomain.RegisterCrossBindingAdaptor(new EventArgsAdaptor()); 
     }
 
     /// <summary>

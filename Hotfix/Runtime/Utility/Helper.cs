@@ -28,7 +28,7 @@ namespace Hotfix.Runtime
         }
 
         /// <summary>
-        /// 创建辅助器。
+        ///     创建辅助器。
         /// </summary>
         /// <typeparam name="T">要创建的辅助器类型。</typeparam>
         /// <param name="helperTypeName">要创建的辅助器类型名称。</param>
@@ -40,7 +40,7 @@ namespace Hotfix.Runtime
             T helper = null;
             if (!string.IsNullOrEmpty(helperTypeName))
             {
-                System.Type helperType = Utility.Assembly.GetTypeWithinLoadedAssemblies(helperTypeName);
+                var helperType = Utility.Assembly.GetTypeWithinLoadedAssemblies(helperTypeName);
                 if (helperType == null)
                 {
                     Log.Warning("Can not find helper type '{0}'.", helperTypeName);
@@ -53,7 +53,7 @@ namespace Hotfix.Runtime
                     return null;
                 }
 
-                helper = (T)(new GameObject()).AddComponent(helperType);
+                helper = (T)new GameObject().AddComponent(helperType);
             }
             else if (customHelper == null)
             {
@@ -62,7 +62,7 @@ namespace Hotfix.Runtime
             }
             else if (customHelper.gameObject.InScene())
             {
-                helper = (index > 0 ? Object.Instantiate(customHelper) : customHelper);
+                helper = index > 0 ? Object.Instantiate(customHelper) : customHelper;
             }
             else
             {
@@ -71,5 +71,6 @@ namespace Hotfix.Runtime
 
             return helper;
         }
+
     }
 }

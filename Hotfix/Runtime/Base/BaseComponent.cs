@@ -21,13 +21,13 @@ namespace Hotfix.Runtime
         private Language m_EditorLanguage = Language.Unspecified;
         
 
-        private string m_LogHelperTypeName= "UnityGameFramework.Runtime.LogHelper";
+        private string m_LogHelperTypeName= "Hotfix.Runtime.LogHelper";
         
-        private string m_ZipHelperTypeName = "UnityGameFramework.Runtime.ZipHelper";
+        private string m_ZipHelperTypeName = "Hotfix.Runtime.ZipHelper";
         
-        private string m_JsonHelperTypeName = "UnityGameFramework.Runtime.JsonHelper";
+        private string m_JsonHelperTypeName = "Hotfix.Runtime.JsonHelper";
         
-        private string m_ProfilerHelperTypeName = "UnityGameFramework.Runtime.ProfilerHelper";
+        private string m_ProfilerHelperTypeName = "Hotfix.Runtime.ProfilerHelper";
         
         private int m_FrameRate = 30;
         

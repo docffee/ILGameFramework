@@ -13,7 +13,7 @@ namespace UnityGameFramework.Runtime
     /// <summary>
     /// 配置管理器辅助器基类。
     /// </summary>
-    public abstract class SettingHelperBase : MonoBehaviour, ISettingHelper
+    public abstract class SettingHelperBase : MonoBehaviour,ISettingHelper
     {
         /// <summary>
         /// 保存配置。

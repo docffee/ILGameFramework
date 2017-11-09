@@ -300,10 +300,11 @@
     <Compile Include="Assets\GameMain\Scripts\Procedure\ProcedurePreload.cs" />
     <Compile Include="Assets\GameMain\Scripts\Procedure\ProcedureTest.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\AssetUtility.cs" />
-    <Compile Include="Assets\ILRuntime\Adapters\ExceptionAdaptor.cs" />
+    <Compile Include="Assets\ILRuntime\Adapters\EventArgsAdaptor.cs" />
     <Compile Include="Assets\ILRuntime\Adapters\IDataRowAdaptor.cs" />
+    <Compile Include="Assets\ILRuntime\Adapters\IDisposableAdaptor.cs" />
+    <Compile Include="Assets\ILRuntime\Adapters\MonoBehaviourAdapter.cs" />
     <Compile Include="Assets\ILRuntime\Adapters\ProcedureBaseAdaptor.cs" />
-    <Compile Include="Assets\ILRuntime\Adapters\UIFormLogicAdaptor.cs" />
     <Compile Include="Assets\ILRuntime\CLR\Method\CLRMethod.cs" />
     <Compile Include="Assets\ILRuntime\CLR\Method\ExceptionHandler.cs" />
     <Compile Include="Assets\ILRuntime\CLR\Method\ILMethod.cs" />
